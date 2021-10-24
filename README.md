@@ -6,9 +6,6 @@
 
 
 
-https://user-images.githubusercontent.com/53192344/138603265-29035420-35d0-4971-a4a2-c3b8e27c3473.mov
-
-
 
 ## PROJECT EXPLANATION:
 The project consists of three main parts: Weather Stations, Storage and FMI.
@@ -72,5 +69,7 @@ The program will take some time to simulate the weather data, around 10 min (dep
 - Step 4: Open the url presented by the terminal (or open browser and go to http://localhost:5000/)
 - Step 5: Enjoy weather data :) 
 
+## Demo
 
+https://user-images.githubusercontent.com/53192344/138603265-29035420-35d0-4971-a4a2-c3b8e27c3473.mov
 
