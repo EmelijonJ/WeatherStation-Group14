@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+    <h1>FMI Weather Data</h1>
+
+    <!-- <p>Please select a city</p> -->
+
+    <form method="POST" action="/">
+      <label for="cities">Choose a city, month and view type:</label>
+      <select name="city" id="city">
+        <option value="oslo">Oslo</option>
+        <option value="bergen">Bergen</option>
+        <option value="trondheim">Trondheim</option>
+      </select>
+      <select name="month" id="month">
+        <option>All</option>
+        {% for i in months %}
+        <option>{{ i }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="view" id="view">
+        <option value="graph">Graph</option>
+        <option value="table">Table</option>
+      </select>
+
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <!-- <p>
+      Click the "Submit" button and the Weather data will be generated.
+    </p> -->
+  </body>
+</html>

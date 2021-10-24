@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMI Graph Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <style>
+      body,
+          h2,
+          h3 {
+            font-family: "Times New Roman", Times, serif;
+          }
+    </style>
+  </head>
+<body>
+  {% if month == All %}
+  <h1>{{ city }}</h1>
+  {% else %}
+  <h1>{{ city }}, {{ month }}</h1>
+  {% endif %}
+    <!-- <h3>Month: {{ month }}</h3> -->
+    <canvas id="tempChart" width=1000" height="400"></canvas>
+    <canvas id="preciChart" width=1000" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById("tempChart").getContext("2d");
+        var tempChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: {{ labels | safe }},
+                datasets: [
+                    {
+                        label: "Temperature in °C",
+                        data: {{ values | safe }},
+                        fill: false,
+                        backgroundColor: "rgb(75, 192, 192)",
+                        lineTension: 0.1
+                    }
+                ]
+            },
+            options: {
+        annotation: {
+          annotations: [
+            {
+              type: "line",
+              mode: "horizontal",
+              label: {
+          content: "Average Temperature {{ avg_temp }} °C",
+          backgroundColor: "rgb(219, 0, 0)",
+          enabled: true,
+          position: "bottom",
+        },
+              scaleID: "y-axis-0",
+              value: {{ avg_temp }},
+              borderColor: "rgb(219, 0, 0)",
+              borderWidth: 2,
+            },
+          ],
+          drawTime: "afterDraw", // (default)
+        },
+      },
+        });
+        var ctx = document.getElementById("preciChart").getContext("2d");
+        var tempChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: {{ labels | safe }},
+                datasets: [
+                    {
+                        label: "Precipitation in mm",
+                        data: {{ values1 | safe }},
+                        fill: false,
+                        // borderColor: "rgb(75, 192, 192)",
+                        backgroundColor: "rgb(75, 192, 192)",
+                        lineTension: 0.1
+                    }
+                ]
+            },
+            options: {
+        annotation: {
+          annotations: [
+            {
+              type: "line",
+              mode: "horizontal",
+              label: {
+          content: "Average Precipitation {{ avg_prec }} mm",
+          backgroundColor: "rgb(0, 0, 219)",
+          enabled: true,
+          position: "bottom",
+        },
+              scaleID: "y-axis-0",
+              value: {{ avg_prec }},
+              borderColor: "rgb(0, 0, 219)",
+              borderWidth: 2,
+            },
+          ],
+          drawTime: "afterDraw", // (default)
+        },
+      },
+        });
+    </script>
+</body>
+</html>
