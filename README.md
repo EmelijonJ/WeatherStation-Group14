@@ -5,6 +5,10 @@
 ![](Documentation/FMI%20Architecture%20.png)
 
 
+https://user-images.githubusercontent.com/53192344/138603097-32378da5-fa05-45c4-bcad-415e13e2f163.mov
+
+
+
 ## PROJECT EXPLANATION:
 The project consists of three main parts: Weather Stations, Storage and FMI.
 #### **Weather Stations:**
