@@ -2,7 +2,7 @@
 
 ## PROJECT ARCHITECTURE: 
 
-<img src="Documentation/FMI%20Architecture%20.png" width="400" />
+<img src="Documentation/FMI%20Architecture%20.png" width="700" />
 
 
 ## Demo
