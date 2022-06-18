@@ -1,4 +1,4 @@
-# INF142-assignment1-Groupe-14
+# WeatherStation - Group14
 
 ## PROJECT ARCHITECTURE: 
 
